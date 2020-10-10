@@ -2,18 +2,30 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
+import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: LoginComponent
+        component: MainComponent,
+        children: [
+            {
+                path: '',
+                redirectTo: 'login',
+                pathMatch: 'full'
+            },
+            {
+                path: 'login',
+                component: LoginComponent
+            },
+            {
+                path: 'changepassword',
+                component: ChangepasswordComponent
+            }
+        ]
     },
-    {
-        path: 'changepassword',
-        component: ChangepasswordComponent
-    }
 ];
 
 @NgModule({

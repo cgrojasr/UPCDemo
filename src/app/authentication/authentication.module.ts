@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { MainComponent } from './main/main.component';
 
 import { AuthenticationRoutingModule} from './authentication-routing.module';
 
@@ -13,7 +14,8 @@ import { AuthenticationRoutingModule} from './authentication-routing.module';
     LoginComponent,
     ChangepasswordComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    MainComponent
   ],
   imports: [
     AuthenticationRoutingModule
