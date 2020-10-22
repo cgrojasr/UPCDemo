@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './login/login.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
@@ -18,7 +19,10 @@ import { AuthenticationRoutingModule} from './authentication-routing.module';
     MainComponent
   ],
   imports: [
-    AuthenticationRoutingModule
+    AuthenticationRoutingModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthenticationModule { }

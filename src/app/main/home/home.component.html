@@ -1,0 +1,25 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Product description" aria-label="Recipient's username" aria-describedby="button-addon2">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button" id="button-addon2">Buscar</button>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3" *ngFor="let product of lstProducts">
+            <div class="row">
+                {{product.id}}
+            </div>
+            <div class="row">
+                {{product.description}}
+            </div>
+            <div class="row">
+                {{product.price}}
+            </div>
+        </div>
+    </div>
+</div>
