@@ -19,6 +19,10 @@ const routes: Routes = [
     loadChildren: () => import('./main/main.module').then(m => m.MainModule)
   },
   {
+    path: 'demo',
+    loadChildren: () => import('./demo/demo.module').then(m => m.DemoModule)
+  },
+  {
     path: '**',
     component: PageNotFoundComponent
   }

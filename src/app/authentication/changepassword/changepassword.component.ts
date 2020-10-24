@@ -14,7 +14,9 @@ import { AuthenticationService} from '../../core/services/authentication/authent
 export class ChangepasswordComponent implements OnInit {
 
   form: FormGroup;
-  userChangePassword: UserChangePassword;
+  strNewPassword: string;
+  strRetypePassword: string;
+
 
   constructor(
     private formBuilder: FormBuilder,

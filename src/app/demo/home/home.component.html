@@ -1,0 +1,39 @@
+<!-- String interpolation -->
+{{example}}
+<br>
+{{1+2}}
+<br>
+<!-- Data Binding -->
+<input type="text" [(ngModel)]="example">
+<br>
+<!-- ngif -->
+<div *ngIf="example === 'Peru campeon'">
+    Si ves esto es porque el ngif es verdadero
+</div>
+<br>
+<!-- ngfor -->
+<div *ngFor="let pais of paises; index as indice">
+     {{indice}} {{pais}}
+</div>
+<br>
+<div *ngFor="let boleta of boletas">
+    <div>
+        {{boleta.id}}
+    </div>
+    <div>
+        {{boleta.cliente}}
+    </div>
+    <div>
+        {{boleta.montoTotal}}
+    </div>
+    <div>
+        {{boleta.impuesto}}
+    </div>
+</div>
+<!-- ngSwitch -->
+<div [ngSwitch]="example">
+    <p *ngSwitchCase="'Peru'">Estamos en Peru</p>
+    <p *ngSwitchCase="'Chile'">Estamos en Chile</p>
+    <p *ngSwitchCase="'Bolivia'">Estamos en Bolivia</p>
+    <p *ngSwitchDefault>No se donde estoy</p>
+</div>
