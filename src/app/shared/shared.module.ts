@@ -11,7 +11,7 @@ import { CurrencyPipe } from './pipes/currency/currency.pipe';
     HeaderComponent,
     FooterComponent,
     CurrencyPipe],
-    exports :[
+    exports: [
       HeaderComponent,
       FooterComponent,
       CurrencyPipe,

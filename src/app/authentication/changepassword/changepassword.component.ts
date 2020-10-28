@@ -14,8 +14,10 @@ import { AuthenticationService} from '../../core/services/authentication/authent
 export class ChangepasswordComponent implements OnInit {
 
   form: FormGroup;
-  strNewPassword: string;
-  strRetypePassword: string;
+  error = false;
+  errorMessage: string;
+  strRetypePassword = '';
+  strNewPassword = '';
 
 
   constructor(
@@ -27,7 +29,6 @@ export class ChangepasswordComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.changepassword();
   }
 
   private buildForm(): void {
@@ -46,23 +47,14 @@ export class ChangepasswordComponent implements OnInit {
       this.form.get('newPassword').setValue(btoa(this.form.get('newPassword').value));
       const userChangePassword = this.form.value;
       this.authenticationService.changePassword(userChangePassword).subscribe(response => {
-        console.log(response);
-        if (response === true) {
-          this.route.navigate(['./auth/login']);
+        if (response.code === 200) {
+          this.route.navigate(['/auth/result/' + response]);
+        }
+        else {
+          this.error = true;
+          this.errorMessage = response.description;
         }
       });
     }
-    console.log(this.form.value);
   }
-
-  // changepassword(): void {
-  //   // const userChangePassword: UserChangePassword = {
-  //   //   username: 'pciscroj',
-  //   //   oldpassword: btoa('Camila1101'),
-  //   //   newpassword: btoa('123')
-  //   // };
-  //   this.authenticationService.changePassword(this.userChangePassword).subscribe(response => {
-  //     console.log(response);
-  //   });
-  // }
 }

@@ -9,12 +9,14 @@ import { FooterComponent } from './footer/footer.component';
 import { MainComponent } from './main/main.component';
 
 import { AuthenticationRoutingModule} from './authentication-routing.module';
+import { ResultComponent } from './result/result.component';
 
 @NgModule({
   declarations: [
     LoginComponent,
     ChangepasswordComponent,
     HeaderComponent,
+    ResultComponent,
     FooterComponent,
     MainComponent
   ],

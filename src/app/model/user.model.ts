@@ -1,17 +1,18 @@
-export interface UserLogin {
-    username: string;
-    password: ArrayBuffer;
+export interface UserAuthentication {
+    userName: string;
+    password: string;
 }
 
 export interface UserChangePassword{
-    username: string;
+    userName: string;
     oldpassword: string;
     newpassword: string;
 }
 
-export interface UserAuthentication {
+export interface UserLogin {
     id: number;
-    username: string;
+    userName: string;
+    password: string;
     email: string;
     active: boolean;
 }

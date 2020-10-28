@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Product } from '../../model/product.model';
+import { UserAuthentication, UserLogin } from '../../model/user.model';
+
 import { ProductsService } from '../../core/services/products/products.service';
 
 @Component({
@@ -59,18 +61,20 @@ export class HomeComponent implements OnInit {
   // ];
 
   lstProducts: Product[];
+  userLogin: UserLogin;
 
   constructor(
     private productsService: ProductsService
   ) { }
 
   ngOnInit(): void {
+    this.userLogin = JSON.parse(localStorage.getItem('userLogin'));
     this.getall();
   }
 
   getall(): void {
-    this.productsService.getall().subscribe(response => {
-      this.lstProducts = response;
-    });
+    // this.productsService.getall().subscribe(response => {
+    //   this.lstProducts = response;
+    // });
   }
 }

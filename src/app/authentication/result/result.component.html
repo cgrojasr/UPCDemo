@@ -1,0 +1,27 @@
+<div class="container" style="padding-top: 10px; padding-bottom: 10px;">
+    <div class="row"  *ngIf="response">
+        <div class="col-1">
+            <img src="https://cdn3.iconfinder.com/data/icons/flat-actions-icons-9/792/Tick_Mark_Dark-512.png" width="50px">
+        </div>
+        <div class="col-10">
+            La contraseña ha sido actualizada con éxito
+        </div>
+        <div *ngIf="!response" class="col-10">
+            Error al querer actualizar la contraseña, por favor vuelva a intenteralo
+        </div>
+    </div>
+    <div class="row" *ngIf="!response">
+        <div class="col-1">
+            <img src="https://i.dlpng.com/static/png/6502827_preview.png" width="50px">
+        </div>
+        <div class="col-10">
+            Error al querer actualizar la contraseña, por favor vuelva a intenteralo
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <button class="btn btn-primary" routerLink="/auth">Regresar</button>
+        </div>
+    </div>
+    {{response}}
+</div>
