@@ -10,6 +10,7 @@ import { MainComponent } from './main/main.component';
 
 import { AuthenticationRoutingModule} from './authentication-routing.module';
 import { ResultComponent } from './result/result.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ResultComponent } from './result/result.component';
     HeaderComponent,
     ResultComponent,
     FooterComponent,
-    MainComponent
+    MainComponent,
+    RegisterComponent
   ],
   imports: [
     AuthenticationRoutingModule,

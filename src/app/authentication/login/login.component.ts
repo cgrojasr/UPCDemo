@@ -1,11 +1,9 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { UserAuthentication, UserLogin } from '../../model/user.model';
-import { Response } from '../../model/response.model';
+import { UserAuthentication } from '../../model/user.model';
 import { AuthenticationService } from '../../core/services/authentication/authentication.service';
-import { importType } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-login',
@@ -36,6 +34,7 @@ export class LoginComponent implements OnInit {
   }
 
   btnLogin(event: Event): void{
+    event.preventDefault();
     this.form.get('password').setValue(btoa(this.form.get('password').value));
     const userAuth: UserAuthentication = this.form.value;
     this.authenticationService.login(userAuth).subscribe(result => {

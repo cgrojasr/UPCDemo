@@ -16,3 +16,10 @@ export interface UserLogin {
     email: string;
     active: boolean;
 }
+
+export interface Entity {
+    userName: string;
+    password: string;
+    email: string;
+    userModifyId: number;
+}

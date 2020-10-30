@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" routerLink="/main">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Cart</a>
@@ -16,14 +16,17 @@
           <a class="nav-link" href="#">Configuration</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link" routerLink="/demo">Demo</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="#">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
+          <a class="nav-link" routerLink="/main/logout">Logout</a>
         </li>
       </ul>
       <span class="navbar-text">
-        {{ userLogin.userName }}
+        {{ userLogin.email }}
       </span>
     </div>
   </nav>

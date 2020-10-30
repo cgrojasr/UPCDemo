@@ -6,6 +6,7 @@ import { MainComponent } from './main/main.component';
 import { LoginComponent } from './login/login.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { ResultComponent } from './result/result.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
     {
@@ -28,6 +29,10 @@ const routes: Routes = [
             {
                 path: 'result/:result',
                 component: ResultComponent
+            },
+            {
+                path: 'register',
+                component: RegisterComponent
             }
         ]
     },

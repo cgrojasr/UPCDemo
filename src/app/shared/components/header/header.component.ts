@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { UserLogin } from '../../../model/user.model';
+import { AuthenticationService } from '../../../core/services/authentication/authentication.service';
 
 @Component({
   selector: 'app-header',
@@ -8,16 +10,13 @@ import { UserLogin } from '../../../model/user.model';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Input() userLogin: UserLogin = null;
+  userLogin: UserLogin;
 
   constructor(
+    private authService: AuthenticationService
   ) { }
 
   ngOnInit(): void {
-
-    // this.userLogin = this.authenticationService.getUserLogin();
-    console.log(this.userLogin.id);
-    console.log(this.userLogin.userName);
-    console.log(this.userLogin);
+    this.userLogin = this.authService.getUserLogin();
   }
 }

@@ -9,13 +9,15 @@ import { MainRoutingModule } from './main-routing.module';
 import { SharedModule } from '../shared/shared.module';
 
 import { UserAuthentication } from './../model/user.model';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     CartComponent,
     ContactComponent,
-    LayoutComponent
+    LayoutComponent,
+    LogoutComponent
   ],
   imports: [
     CommonModule,
@@ -23,6 +25,4 @@ import { UserAuthentication } from './../model/user.model';
     SharedModule
   ]
 })
-export class MainModule {
-  public userAuthMain: UserAuthentication;
-}
+export class MainModule {}

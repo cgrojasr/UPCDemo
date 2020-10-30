@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 
-import { UserLogin, UserAuthentication, UserChangePassword } from '../../../model/user.model';
+import { UserLogin, UserAuthentication, UserChangePassword, Entity } from '../../../model/user.model';
 import { Response } from '../../../model/response.model';
 import { Observable } from 'rxjs';
 
@@ -16,6 +16,10 @@ export class AuthenticationService {
   constructor(
     private http: HttpClient
   ) { }
+
+  regiter(user: Entity): Observable<Response<Entity>> {
+    return this.http.post<Response<Entity>>(`${environment.url_api}user`, user);
+  }
 
   login(userAuth: UserAuthentication): Observable<Response<UserLogin>> {
     return this.http.post<Response<UserLogin>>(`${environment.url_api}user/login`, userAuth);

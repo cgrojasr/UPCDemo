@@ -12,56 +12,9 @@ import { ProductsService } from '../../core/services/products/products.service';
 })
 export class HomeComponent implements OnInit {
 
-  // lstProducts: Product[] = [
-  //   {
-  //     id: 1,
-  //     description: 'Jersey FC Barcelona 19/20',
-  //     image: '',
-  //     price: 100,
-  //     title: 'Jersey FC Barcelona 19/20',
-  //     active: true,
-  //     userId: 1
-  //   },
-  //   {
-  //     id: 1,
-  //     description: 'Jersey FC Barcelona 19/20',
-  //     image: '',
-  //     price: 100,
-  //     title: 'Jersey FC Barcelona 19/20',
-  //     active: true,
-  //     userId: 1
-  //   },
-  //   {
-  //     id: 1,
-  //     description: 'Jersey FC Barcelona 19/20',
-  //     image: '',
-  //     price: 100,
-  //     title: 'Jersey FC Barcelona 19/20',
-  //     active: true,
-  //     userId: 1
-  //   },
-  //   {
-  //     id: 1,
-  //     description: 'Jersey FC Barcelona 19/20',
-  //     image: '',
-  //     price: 100,
-  //     title: 'Jersey FC Barcelona 19/20',
-  //     active: true,
-  //     userId: 1
-  //   },
-  //   {
-  //     id: 1,
-  //     description: 'Jersey FC Barcelona 19/20',
-  //     image: '',
-  //     price: 100,
-  //     title: 'Jersey FC Barcelona 19/20',
-  //     active: true,
-  //     userId: 1
-  //   }
-  // ];
-
-  lstProducts: Product[];
+  products: Product[];
   userLogin: UserLogin;
+  // descripcion: string;
 
   constructor(
     private productsService: ProductsService
@@ -69,12 +22,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.userLogin = JSON.parse(localStorage.getItem('userLogin'));
-    this.getall();
+    this.btnSearch('null');
   }
 
-  getall(): void {
-    // this.productsService.getall().subscribe(response => {
-    //   this.lstProducts = response;
-    // });
+  btnSearch(descripcion: string): void {
+    this.productsService.allActiveProducts(descripcion).subscribe(response => {
+      console.log(response);
+      if (response.code === 200) {
+        this.products = response.response;
+      }
+    });
   }
 }
