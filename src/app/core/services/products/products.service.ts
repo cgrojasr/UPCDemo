@@ -15,6 +15,7 @@ export class ProductsService {
     private http: HttpClient
   ) { }
 
+  // En caso queramos todos los articulos disponibles enviar el texto null
   allActiveProducts(description: string): Observable<Response<Product[]>> {
     return this.http.get<Response<Product[]>>(`${environment.url_api}product/allactiveproducts/${description}`);
   }

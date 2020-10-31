@@ -18,4 +18,8 @@ export class UserService {
   regiter(user: Entity): Observable<Response<Entity>> {
     return this.http.post<Response<Entity>>(`${environment.url_api}user`, user);
   }
+
+  update(user: Entity): Observable<Response<Entity>> {
+    return this.http.put<Response<Entity>>(`${environment.url_api}user`, user);
+  }
 }

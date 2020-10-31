@@ -37,3 +37,108 @@
     <p *ngSwitchCase="'Bolivia'">Estamos en Bolivia</p>
     <p *ngSwitchDefault>No se donde estoy</p>
 </div>
+<!-- GET Service -->
+<div class="container">
+    <div class="row">
+        <div class="col-3" *ngFor="let product of products">
+            <div class="row">
+                <img [src]="product.image" width="200px">
+            </div>
+            <div class="row">
+                {{product.id}}
+            </div>
+            <div class="row">
+                {{product.description}}
+            </div>
+            <div class="row">
+                {{product.price}}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- POST Service -->
+<form  [formGroup]="form" (ngSubmit)="btnSave($event)">
+    <div class="container py-5">
+        <div class="row py-2">
+            <div class="col-3">
+                User Name
+            </div>
+            <div class="col-3">
+                <input  formControlName="userName" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-3">
+                Email
+            </div>
+            <div class="col-3">
+                <input formControlName="email" type="email" class="form-control">
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-3">
+                Password
+            </div>
+            <div class="col-3">
+                <input formControlName="password" type="password" class="form-control" [(ngModel)]="password">
+            </div>
+            {{password}}
+        </div>
+        <div class="row py-2">
+            <div class="col-3">
+                Retype Password
+            </div>
+            <div class="col-3">
+                <input formControlName="reTypePassword" type="password" class="form-control"  [(ngModel)]="reTypePassword">
+            </div>
+            {{reTypePassword}}
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <button type="submit" class="btn btn-primary" [disabled]="password !== reTypePassword || password === '' || reTypePassword === ''" >Save</button>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- PUT Service -->
+<form  [formGroup]="formUpdate" (ngSubmit)="btnUpdate($event)">
+    <div class="container py-5">
+        <div class="row py-2">
+            <div class="col-3">
+                User Name
+            </div>
+            <div class="col-3">
+                <input  formControlName="userName" type="text" class="form-control">
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-3">
+                Email
+            </div>
+            <div class="col-3">
+                <input formControlName="email" type="email" class="form-control">
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-3">
+                Password
+            </div>
+            <div class="col-3">
+                <input formControlName="password" type="password" class="form-control">
+            </div>
+        </div>
+        <div class="row py-2">
+            <div class="col-3">
+                Retype Password
+            </div>
+            <div class="col-3">
+                <input formControlName="reTypePassword" type="password" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </div>
+    </div>
+</form>

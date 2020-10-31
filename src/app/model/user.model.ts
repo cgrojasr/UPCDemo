@@ -18,8 +18,10 @@ export interface UserLogin {
 }
 
 export interface Entity {
+    id: number;
     userName: string;
     password: string;
     email: string;
+    active: boolean;
     userModifyId: number;
 }
