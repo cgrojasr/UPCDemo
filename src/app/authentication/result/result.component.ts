@@ -17,7 +17,6 @@ export class ResultComponent implements OnInit {
     this.route.params.subscribe((params: Params) => {
       const response = (params.result === 'true');
       this.response = response;
-      console.log(response);
     });
   }
 }

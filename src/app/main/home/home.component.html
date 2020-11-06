@@ -11,21 +11,7 @@
     </div>
     <div class="row">
         <div class="col-3" *ngFor="let product of products">
-            <div class="row">
-                <img [src]="product.image" width="220px" [title]="product.title">
-            </div>
-            <div class="row">
-                {{product.id | productCode}}
-            </div>
-            <div class="row">
-                {{product.description}}
-            </div>
-            <div class="row">
-                {{product.price | currency}}
-            </div>
-            <div class="row">
-                <button class="btn btn-primary"> Add Cart</button>
-            </div>
+            <app-product [product]="product"></app-product>
         </div>
     </div>
 </div>

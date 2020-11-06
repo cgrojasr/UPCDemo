@@ -1,0 +1,15 @@
+<div class="row">
+    <img [src]="product.image" width="220px" [title]="product.title">
+</div>
+<div class="row">
+    {{product.id | productCode}}
+</div>
+<div class="row">
+    {{product.description}}
+</div>
+<div class="row">
+    {{product.price | currency}}
+</div>
+<div class="row">
+    <button class="btn btn-primary" (click)="btnAddCart()"> Add Cart</button>
+</div>

@@ -1,0 +1,55 @@
+<form (ngSubmit)="btnFilter($event)">
+    <div class="container py-10">
+        <div class="row">
+            <h3>Mantenimiento de usuarios</h3>
+        </div>
+        <div class="row py-2">
+            <div class="col-1">
+                <label for="colFormLabel" class="col-sm-2 col-form-label">Estado</label>
+            </div>
+            <div class="col-3">
+                <div class="input-group">
+                    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                      <option selected value="null">Todo</option>
+                      <option value="true">Activo</option>
+                      <option value="false">Inactivo</option>
+                    </select>
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">Filtrar</button>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-2 offset-6">
+                <button class="btn btn-primary" routerLink="/maintenance/userdetails/0">Registrar</button>
+            </div>
+        </div>
+        <div class="row py-2 border">
+            <div class="col-2">
+                <label class="col-sm-2 col-form-label">ID</label>
+            </div>
+            <div class="col-6">
+                <label class="col-sm-2 col-form-label">EMAIL</label>
+            </div>
+            <div class="col-2">
+                MODIFICAR
+            </div>
+            <div class="col-2">
+                ELIMINAR
+            </div>
+        </div>
+        <div class="row py-2 border" *ngFor="let user of users">
+            <div class="col-2">
+                <label class="col-sm-2 col-form-label">{{user.id}}</label>
+            </div>
+            <div class="col-6">
+                <label class="col-sm-2 col-form-label">{{user.email}}</label>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-success" [routerLink]="['/maintenance/userdetails/', user.id]">Modificar</button>
+            </div>
+            <div class="col-2">
+                <button class="btn btn-danger" [routerLink]="['/maintenance/userdelete/', user.id]">Eliminar</button>
+            </div>
+        </div>
+    </div>    
+</form>

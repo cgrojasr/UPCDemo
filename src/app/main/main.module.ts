@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 
 import { UserAuthentication } from './../model/user.model';
 import { LogoutComponent } from './logout/logout.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LogoutComponent } from './logout/logout.component';
     CartComponent,
     ContactComponent,
     LayoutComponent,
-    LogoutComponent
+    LogoutComponent,
+    ProductComponent
   ],
   imports: [
     CommonModule,

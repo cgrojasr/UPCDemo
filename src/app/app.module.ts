@@ -14,7 +14,7 @@ import { CoreModule } from './core/core.module';
   declarations: [
     AppComponent,
     LayoutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

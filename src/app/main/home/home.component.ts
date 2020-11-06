@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Product } from '../../model/product.model';
-import { UserAuthentication, UserLogin } from '../../model/user.model';
+import { UserLogin } from '../../model/user.model';
 
 import { ProductsService } from '../../core/services/products/products.service';
+import { CartService } from '../../core/services/cart/cart.service';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,8 @@ export class HomeComponent implements OnInit {
   // descripcion: string;
 
   constructor(
-    private productsService: ProductsService
+    private productsService: ProductsService,
+    private cartService: CartService
   ) { }
 
   ngOnInit(): void {

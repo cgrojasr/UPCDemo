@@ -25,3 +25,9 @@ export interface Entity {
     active: boolean;
     userModifyId: number;
 }
+
+export interface ForList {
+    id: number;
+    email: string;
+    active: boolean;
+}
